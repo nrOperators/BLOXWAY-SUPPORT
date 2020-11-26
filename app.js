@@ -4,6 +4,7 @@ const tokens = require(`./tokens.json`);
 const fs = require(`fs`);
 const client = new Discord.Client();
 
+
 client.tokens = tokens;
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();

@@ -33,15 +33,13 @@ exports.run = async (client, msg, params) => {
 
   var reply = args.splice(1).join(" ");
   const embed = new Discord.RichEmbed()
-    .setAuthor(`MESSAGE SENT!`)
+    .setAuthor(`Bloxway Support`)
     .setDescription(reply)
     .setColor(tokens.generic.colour.error)
     .setTimestamp()
-    .setFooter(`Made by opxrator#0001`)
-   msg.user.send(embed)
-  user.send(reply)
-  
-  msg.react('🔥')
+    .setFooter(`Bloxway Support System | Made by opxrator#0001`)
+  user.send(embed)
+  msg.react('✅')
 }
 
 exports.conf = {
