@@ -3,7 +3,10 @@ const log = require(`./handlers/logHandler.js`);
 const tokens = require(`./tokens.json`);
 const fs = require(`fs`);
 const client = new Discord.Client();
-
+const got = require(`got`)
+setInterval(function() {
+  got("https://neworsfixed.glitch.me");
+}, 230000);
 
 client.tokens = tokens;
 client.commands = new Discord.Collection();

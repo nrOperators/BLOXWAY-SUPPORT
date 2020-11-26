@@ -20,13 +20,13 @@ exports.run = async (client, msg, params) => {
   let user = client.users.get(thisUser);
   const embed = new Discord.RichEmbed()
     .setAuthor(`Bloxway Support`)
-    .setDescription(reply)
+    .setDescription('Ticket has been closed by ' + msg.author.tag)
     .setColor(tokens.generic.colour.error)
     .setTimestamp()
     .setFooter(`Bloxway Support System | Made by opxrator#0001`)
   user.send(embed)
   msg.react('✅')
-  user.send('Ticket has been closed by ' + msg.author.tag)
+
   msg.channel.delete()
 }
 
