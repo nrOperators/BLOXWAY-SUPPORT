@@ -45,11 +45,11 @@ exports.run = async (client, msg, params) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['reply']
+  aliases: ['r']
 };
 
 exports.help = {
   name: 'reply',
   description: 'Replys to a ticket',
-  usage: 'reply'
+  usage: 'r'
 };
