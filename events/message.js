@@ -19,12 +19,13 @@ module.exports = (client, msg) => {
 
         let everyone = guild.id;
         let user = msg.author.id;
-      
+        
 
         c.overwritePermissions(everyone, {
-          READ_MESSAGES: false,
-          SEND_MESSAGES: false
+          READ_MESSAGES: true,
+          SEND_MESSAGES: true
         })
+     
         
 
         c.overwritePermissions(user, {
