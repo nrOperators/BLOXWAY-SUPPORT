@@ -20,7 +20,7 @@ exports.run = async (client, msg, params) => {
   let user = client.users.get(thisUser);
   const embed = new Discord.RichEmbed()
     .setAuthor(`Bloxway Support`)
-    .setDescription('Ticket has been closed by ' + msg.author.tag)
+    .setDescription('**TICKET CLOSED!** \n \n \n *To open a other ticket please resend a message here to create a new ticket* \n \n \n \n Ticket has been closed by ' + msg.author.tag)
     .setColor(tokens.generic.colour.error)
     .setTimestamp()
     .setFooter(`Bloxway Support System | Made by opxrator#0001`)
