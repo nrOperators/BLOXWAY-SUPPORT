@@ -37,7 +37,7 @@ exports.run = async (client, msg, params) => {
     .setDescription(reply)
     .setColor(tokens.generic.colour.default)
     .setTimestamp()
-    .setFooter(`Bloxway Support System | Made by opxrator#0001`)
+    .setFooter(`Bloxway Support System | Made by opxrator#0001 | Reply below to answer`)
   user.send(embed)
   msg.react('✅')
 }
