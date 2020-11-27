@@ -19,9 +19,14 @@ module.exports = (client, msg) => {
 
         let everyone = guild.id;
         let user = msg.author.id;
+        let SupportRole = (role => role.name == "Support Team");
 
         c.overwritePermissions(everyone, {
           READ_MESSAGES: false,
+          SEND_MESSAGES: false
+        })
+        c.overwritePermissions(SupportRole, {
+          READ_MESSAGES: true,
           SEND_MESSAGES: false
         })
 
