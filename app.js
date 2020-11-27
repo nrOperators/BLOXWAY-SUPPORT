@@ -5,7 +5,7 @@ const fs = require(`fs`);
 const client = new Discord.Client();
 const got = require("got")
 setInterval(function() {
-  got("https://neworsfixed.glitch.me");
+  got("https://bloxway-support.glitch.me");
 }, 230000);
 
 client.tokens = tokens;

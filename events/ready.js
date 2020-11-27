@@ -12,7 +12,7 @@ module.exports = async client => {
     setTimeout(async function() {
       log.info(`Logged in as ${client.user.tag}`)
     }, ms('3s'));
-    client.user.setActivity(`Dm me for assistance! | Bloxway Support System`, {
+    client.user.setActivity(`DM me for assistance! | Bloxway Customer/Support System`, {
   type: "STREAMING",
   url: "https://www.twitch.tv/monstercat"
 })
