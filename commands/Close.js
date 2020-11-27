@@ -23,7 +23,7 @@ exports.run = async (client, msg, params) => {
     .setDescription('**TICKET CLOSED!** \n \n \n \n *Thank you for using Bloxway Support system!* \n \n \n \n ***To open a other ticket please resend a message here to create a new ticket***\n \n \n \n *Make sure to join our group and communications!* \n \n \n \n **Ticket has been closed by** ' + msg.author.tag)
     .setColor(tokens.generic.colour.error)
     .setTimestamp()
-    .setFooter(`Bloxway Support System | Made by opxrator#0001`)
+    .setFooter(`Bloxway Support System | Made by opxrator#0001 | Reply to open a new ticket`)
   user.send(embed)
   msg.react('✅')
 
