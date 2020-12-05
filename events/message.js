@@ -3,7 +3,7 @@ const tokens = require('../tokens.json');
 const log = require(`../handlers/logHandler.js`);
 const client = new Discord.Client();
 
-module.exports = (client, msg) => {
+module.exports = async (client, msg) => {
   if (msg.author.bot) return;
 
   let guild = client.guilds.get(tokens.guild);
@@ -11,10 +11,16 @@ module.exports = (client, msg) => {
   if (msg.guild === null) {
     if (guild.channels.exists('name', `t-${msg.author.id}`)) {
       let c = guild.channels.find(channel => channel.name === `t-${msg.author.id}`);
+      const embed = new Discord.RichEmbed()
+    .setAuthor(`Bloxway test`)
+    .setDescription(msg)
+    .setColor(tokens.generic.colour.default)
+    .setTimestamp()
+    .setFooter(`Bloxway Support System | Made by opxrator#0001 | Reply below to answer`)
       msg.react('✅')
       c.send("Message from **" + msg.author + "(" + msg.author.id + ")**\n\n```yaml\n" + msg.content + "\n```")
-    } else {3333
-      guild.createChannel(`t-${msg.author.id}`, 'text').then(async c => {
+    } else {
+      const c = await guild.channels.create(`t-${msg.author.id}`, 'text').then(async c => {
         c.setParent(tokens.ticket_category)
 
         let everyone = guild.id;
@@ -33,6 +39,7 @@ module.exports = (client, msg) => {
           SEND_MESSAGES: true
         })
         msg.react('✅')
+        
         c.send("Message from **" + msg.author + "(" + msg.author.id + ")**\n\n```yaml\n" + msg.content + "\n```")
       })
     }

@@ -29,7 +29,7 @@ fs.readdir('./events/', (err, files) => {
   log.info(`Loading a total of ${files.length} events.`);
   files.forEach(file => {
     const eventName = file.split(".")[0];
-    const event = require(`./events/${file}`);
+    const event = require(`./events/${eventName}`);
     client.on(eventName, event.bind(null, client));
     delete require.cache[require.resolve(`./events/${file}`)];
   });
