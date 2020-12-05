@@ -11,10 +11,25 @@ module.exports = async (client, msg) => {
   if (msg.guild === null) {
     if (guild.channels.exists('name', `t-${msg.author.id}`)) {
       let c = guild.channels.find(channel => channel.name === `t-${msg.author.id}`);
+      const reply1 = new Discord.RichEmbed()
+    .setAuthor(`Message SENT!`)
+    .setDescription(`Your message has been sent!`)
+    .addField(`Content`, msg.content)
+    .setColor(tokens.generic.colour.default)
+    .setTimestamp()
+    .setFooter(`Bloxway Support System | Made by opxrator#0001 | Reply below to answer`)
+      msg.react('✅')
+     msg.author.send(reply1)
 
       //this is when their ticket is ALREADY opened sir
-      msg.react('✅')
-      c.send("Message from **" + msg.author.tag + "(" + msg.author.id + ")**\n\n```yaml\n" + msg.content + "\n```")
+      
+      const eembed = new Discord.RichEmbed()
+    .setAuthor(`Message recieved from ${msg.author.username}`, msg.author.avatarURL)
+    .setDescription(msg.content)
+    .setColor('#9932cc')
+    .setTimestamp()
+    .setFooter(`Bloxway Support System | Made by opxrator#0001`)
+      c.send(eembed)
     } else {
       //this is when a new ticket is created
       const c = await guild.createChannel(`t-${msg.author.id}`, 'text').then(async c => {

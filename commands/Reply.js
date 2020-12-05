@@ -39,7 +39,16 @@ exports.run = async (client, msg, params) => {
     .setTimestamp()
     .setFooter(`Bloxway Support System | Made by opxrator#0001 | Reply below to answer`)
   user.send(embed)
-  msg.react('✅')
+  
+  const ticketchannelembed= new Discord.RichEmbed()
+  .setAuthor(`Message Sent`, msg.author.avatarURL)
+  
+  .setDescription(reply)
+  .setColor(tokens.generic.colour.default)
+  .setTimestamp()
+  .setFooter(`Bloxway Support System | Made by opxrator#0001`)
+  await msg.delete()
+  await msg.channel.send(ticketchannelembed)
 }
 
 exports.conf = {
