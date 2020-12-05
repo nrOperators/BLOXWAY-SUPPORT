@@ -54,12 +54,18 @@ module.exports = async (client, msg) => {
         //PUT EMBED HERE
               const embed = new Discord.RichEmbed()
     .setAuthor(`TICKET OPENED`)
-    .setDescription(`Greetings ${msg.author.username} \n\n Your ticket has been sent to Bloxway Support staff! \n\n The support staff will reply to this ticket in a delay of 1-4 hours. \n\n\n *Regards*\n*Bloxway Support Team*`)
+    .setDescription(`Greetings ${msg.author.username}, \n\n Your ticket has been sent to Bloxway Support staff! \n\n The support staff will reply to this ticket in a delay of 1-4 hours. \n\n\n *Regards*\n*Bloxway Support Team*`)
     .setColor(tokens.generic.colour.default)
     .setTimestamp()
     .setFooter(`Bloxway Support System | Made by opxrator#0001 | Reply below to answer`)
      msg.author.send(embed)
-        c.send("Message from **" + msg.author + " (" + msg.author.id + ")**\n\n```yaml\n" + msg.content + "\n```")
+        const eeembd = new Discord.RichEmbed()
+    .setAuthor(`Message recieved from ${msg.author.username}`, msg.author.avatarURL)
+    .setDescription(msg.content)
+    .setColor('#9932cc')
+    .setTimestamp()
+    .setFooter(`Bloxway Support System | Made by opxrator#0001`)
+      c.send(eeembd)
       })
     }
   }
