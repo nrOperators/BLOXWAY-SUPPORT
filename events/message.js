@@ -13,7 +13,7 @@ module.exports = (client, msg) => {
       let c = guild.channels.find(channel => channel.name === `t-${msg.author.id}`);
       msg.react('✅')
       c.send("Message from **" + msg.author + "(" + msg.author.id + ")**\n\n```yaml\n" + msg.content + "\n```")
-    } else {
+    } else {3333
       guild.createChannel(`t-${msg.author.id}`, 'text').then(async c => {
         c.setParent(tokens.ticket_category)
 
