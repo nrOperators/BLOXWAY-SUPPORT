@@ -33,7 +33,7 @@ exports.run = async (client, msg, params) => {
 
   var reply = args.splice(1).join(" ");
   const embed = new Discord.RichEmbed()
-    .setAuthor(`Bloxway Support`)
+    .setAuthor(`${msg.author.username}`, msg.author.avatarURL)
     .setDescription(reply)
     .setColor(tokens.generic.colour.default)
     .setTimestamp()
