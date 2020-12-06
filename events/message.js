@@ -57,7 +57,7 @@ module.exports = async (client, msg) => {
         //PUT EMBED HERE
               const embed = new Discord.RichEmbed()
     .setAuthor(`TICKET OPENED`)
-    .setDescription(`Greetings ${msg.author.username}, \n\n Your ticket has been sent to Bloxway Support staff! \n\n The support staff will reply to this ticket in a delay of 1-4 hours. \n\n\n *Regards*\n*Bloxway Support Team*`)
+    .setDescription(`Greetings ${msg.author.username}, \n\n Your ticket has been sent to Bloxway Support staff! \n\n The support staff will reply to this ticket in a delay of 1-4 hours.\nPlease note images are not able to be sent through the bot. To send an image, right click the image and click copy link, then paste the link here. \n\n\n *Regards*\n*Bloxway Support Team*`)
     .addField(`Content`, msg.content)
     .setColor(tokens.generic.colour.default)
     .setTimestamp()
