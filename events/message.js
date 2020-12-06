@@ -32,6 +32,9 @@ module.exports = async (client, msg) => {
       c.send(eembed)
     } else {
       //this is when a new ticket is created
+      //PROMPT TYPE HERE
+      
+      
       const c = await guild.createChannel(`t-${msg.author.id}`, 'text').then(async c => {
         c.setParent(tokens.ticket_category)
 
