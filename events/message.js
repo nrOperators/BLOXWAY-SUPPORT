@@ -92,5 +92,22 @@ module.exports = async (client, msg) => {
 
 
 const createTicket = async function (type, msg) {
+  const embed = new Discord.RichEmbed()
+  .setTitle(`Bloxway Support | Ticket Opening`)
+  .setDescription(`Please specify what kind of support you need.\n\n\n1: General Support\n2: Game Support\n3: Discord Support\n4: Ranking Support\n5: Appeal Support\n6: Alliance Support`)//o
+  .setColor(tokens.colour.default)
+  
+  const mes = await msg.channel.send(embed)
+    await mes.react('1️⃣')
+    await mes.react('2️⃣')
+    await mes.react('3️⃣')
+    await mes.react('4️⃣')
+    await mes.react('5️⃣')
+    await mes.react('6️⃣')
+  
+  const filter = (reaction, user) => user.id === msg.author.id && ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣'].includes(reaction.emoji.name);
+  
+  const react = (await mes.awaitReactions(filter, { max: 1 })).first()
+    
   
 }
