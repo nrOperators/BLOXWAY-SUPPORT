@@ -11,6 +11,7 @@ setInterval(function() {
 }, 230000);
 
 client.db1 = new Enmap({provider: new EnmapLevel({name: "blacklisted"})});
+client.blacklist = new Enmap({provider: new EnmapLevel({name: "blacklist"})});
 
 
 client.tokens = tokens;

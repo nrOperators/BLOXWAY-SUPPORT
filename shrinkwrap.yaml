@@ -4,6 +4,7 @@ dependencies:
   enmap: 5.8.2
   enmap-level: 2.1.0
   got: 11.8.0
+  hastebin-gen: 2.0.5
   moment: 2.29.1
   ms: 2.1.2
 packages:
@@ -419,6 +420,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-4Ob+aijPUROIVeCG0Wkedx3iqLk=
+  /hastebin-gen/2.0.5:
+    dependencies:
+      node-fetch: 2.6.1
+    dev: false
+    resolution:
+      integrity: sha512-At1LaKtcqh2jiP8xfE2sDGT9IshIki6FqsgLwn2y7FzAvlFJRtpUsSPh3yWjWIQIvxi/GPF07IBqSI8WhPL/gQ==
   /http-cache-semantics/4.1.0:
     dev: false
     resolution:
@@ -618,6 +625,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-9xZrlyfvKhWme2EXFKQhZRp1yNWT/uI1luYPr3sFl+H4keYY4xR+1jO7mvTTijIsHf1M+QDe9uWuKeEpLInIlg==
+  /node-fetch/2.6.1:
+    dev: false
+    engines:
+      node: 4.x || >=6.0.0
+    resolution:
+      integrity: sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
   /noop-logger/0.1.1:
     dev: false
     resolution:
@@ -1039,5 +1052,6 @@ specifiers:
   enmap: ^5.8.1
   enmap-level: ^2.1.0
   got: ^11.7.0
+  hastebin-gen: ^2.0.5
   moment: ^2.29.1
   ms: ^2.1.2

@@ -6,7 +6,7 @@ const log = require(`../handlers/logHandler.js`);
 const client = new Discord.Client();
 
 
-exports.run = async (Discord, client, message, args) => {
+exports.run = async (client, message, args) => {
     var e5 = new Discord.RichEmbed()
     .setTitle(":grey_exclamation: Bot Developers Only")
     .setColor("PURPLE")
@@ -27,7 +27,7 @@ exports.run = async (Discord, client, message, args) => {
     .setColor("RED")
     .setDescription("For security reasons you cannot blacklist that user from using Bloxway Support")
         var e5 = new Discord.RichEmbed()
-    .setTitle(":x: Blacklist Error.")
+    .setTitle("Blacklist Error.")
     .setColor("RED")
     .setDescription(":x: Please state the discord ID when you execute the command.")
       

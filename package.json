@@ -27,6 +27,7 @@
     "got": "^11.7.0",
     "enmap": "^5.8.1",
     "enmap-level": "^2.1.0",
-    "moment": "^2.29.1"
+    "moment": "^2.29.1",
+    "hastebin-gen": "^2.0.5"
   }
 }
