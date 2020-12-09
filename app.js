@@ -2,11 +2,16 @@ const Discord = require(`discord.js`);
 const log = require(`./handlers/logHandler.js`);
 const tokens = require(`./tokens.json`);
 const fs = require(`fs`);
+const EnmapLevel = require('enmap-level');
+const Enmap = require('enmap');
 const client = new Discord.Client();
 const got = require("got")
 setInterval(function() {
   got("https://bloxway-support.glitch.me");
 }, 230000);
+
+client.db1 = new Enmap({provider: new EnmapLevel({name: "blacklisted"})});
+
 
 client.tokens = tokens;
 client.commands = new Discord.Collection();
