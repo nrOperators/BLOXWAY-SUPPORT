@@ -1,5 +1,10 @@
 const ms = require("ms");
 const moment = require('moment');
+var Discord = require('discord.js');
+const tokens = require('../tokens.json');
+const log = require(`../handlers/logHandler.js`);
+const client = new Discord.Client();
+
 
 exports.run = async (Discord, client, message, args) => {
     var e5 = new Discord.RichEmbed()
@@ -21,14 +26,19 @@ exports.run = async (Discord, client, message, args) => {
     .setTitle(":x: Blacklist Error.")
     .setColor("RED")
     .setDescription("For security reasons you cannot blacklist that user from using Bloxway Support")
+        var e5 = new Discord.RichEmbed()
+    .setTitle(":x: Blacklist Error.")
+    .setColor("RED")
+    .setDescription(":x: Please state the discord ID when you execute the command.")
       
  //  if(client.cooldowntransfer.has(message.author.id)) {
   //      return message.channel.send(e3)
  //   }
-    if(!userid90) return message.channel.send(":x: Please tell me the user ID to blacklist from using this bot.")
+    if(!userid90) return message.channel.send(e5)
       if(userid90 == "427591816314093568") return message.channel.send(e4)
       if(userid90 == "427591816314093568") return message.channel.send(e4)
 
+  //  client.groupid2.set(`${code}`,  groupid2);
  client.blacklist.set(userid90, "Blacklisted by: " + message.author.username)
 
 
