@@ -1,10 +1,14 @@
-const Discord = require(`discord.js`);
+const ms = require("ms");
+const moment = require('moment');
+var Discord = require('discord.js');
 const tokens = require('../tokens.json');
 const log = require(`../handlers/logHandler.js`);
 const client = new Discord.Client();
 
 module.exports = async (client, msg) => {
+ 
   if (msg.author.bot) return;
+  
 
   let guild = client.guilds.get(tokens.guild);
 
