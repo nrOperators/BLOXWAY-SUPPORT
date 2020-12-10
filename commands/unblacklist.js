@@ -24,10 +24,15 @@ exports.run = async (client, message, args) => {
     .setTitle("Unblacklist Error.")
     .setColor("RED")
     .setDescription(":x: Please tell me the user ID to unblacklist so they can use this bot again.")
+   
+   var e8 = new Discord.RichEmbed()
+    .setTitle("Unblacklist Error.")
+    .setColor("RED")
+    .setDescription(":x: That user is not blacklisted.")
       
  
     if(!userid90) return message.channel.send(e5)
-  
+  if(await client.blacklist.get(userid90) == null) return message.channel.send(e8)
  client.blacklist.delete(userid90)
 
 

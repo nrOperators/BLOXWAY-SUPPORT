@@ -30,6 +30,10 @@ exports.run = async (client, message, args) => {
     .setTitle("Blacklist Error.")
     .setColor("RED")
     .setDescription(":x: Please state the discord ID when you execute the command.")
+        var e8 = new Discord.RichEmbed()
+    .setTitle("Blacklist Error.")
+    .setColor("RED")
+    .setDescription(":x: That user is already blacklisted.")
         var e6 = new Discord.RichEmbed()
     .setTitle("Blacklist Error.")
     .setColor("RED")
@@ -44,6 +48,7 @@ exports.run = async (client, message, args) => {
   if(!reasons) return message.channel.send(e6)
 
   //  client.groupid2.set(`${code}`,  groupid2);
+  if(await client.blacklist.get(userid90) !== null) return message.channel.send(e8)
  await client.blacklist.set(userid90, "Blacklisted by: " + message.author.username + " for a reason of: " + reasons)
 
 

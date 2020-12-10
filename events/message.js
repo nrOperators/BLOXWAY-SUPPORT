@@ -13,7 +13,7 @@ module.exports = async (client, msg) => {
   let guild = client.guilds.get(tokens.guild);
 
   if (msg.guild === null) {
-    if(client.blacklist.get(msg.author.id)) return msg.channel.send(`You are blacklisted from bloxway support ${client.blacklist.get(msg.author.id)}`)
+   if(await client.blacklist.get(msg.author.id) !== null) return msg.channel.send(`You are blacklisted from bloxway support ${await client.blacklist.get(msg.author.id)}`)
     if (guild.channels.exists('name', `t-${msg.author.id}`)) {
       let c = guild.channels.find(channel => channel.name === `t-${msg.author.id}`);
       const reply1 = new Discord.RichEmbed()
@@ -37,7 +37,7 @@ module.exports = async (client, msg) => {
     .setFooter(`Bloxway Support System | Made by opxrator#0001`)
       c.send(eembed) 
     } else {
-      if(client.blacklist.get(msg.author.id)) return msg.channel.send(`You are blacklisted from bloxway support ${client.blacklist.get(msg.author.id)}`)
+      if(await client.blacklist.get(msg.author.id) !== null) return msg.channel.send(`You are blacklisted from bloxway support ${await client.blacklist.get(msg.author.id)}`)
       //this is when a new ticket is created
       //PROMPT TYPE HERE
       const embed = new Discord.RichEmbed()
@@ -58,22 +58,22 @@ module.exports = async (client, msg) => {
   const react = (await mes.awaitReactions(filter, { max: 1 })).first().emoji.name;
       
    if(react === '1️⃣') {
-     mes.clearReactions()
+ 
      createTicket('General Support', msg, client)
    } else if (react === '2️⃣') {
-     mes.clearReactions()
+
       createTicket('Game Support', msg, client)
    }else if (react === '3️⃣') {
-     mes.clearReactions()
+
       createTicket('Discord Support', msg, client)
    }else if (react === '4️⃣') {
-     mes.clearReactions()
+ 
       createTicket('Ranking Support', msg, client)
    }else if (react === '5️⃣') {
-     mes.clearReactions()
+
       createTicket('Appeal Support', msg, client)
    }else if (react === '6️⃣') {
-     mes.clearReactions()
+
       createTicket('Alliance Support', msg, client)
    }
       
