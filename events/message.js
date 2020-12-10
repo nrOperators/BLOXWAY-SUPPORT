@@ -13,6 +13,7 @@ module.exports = async (client, msg) => {
   let guild = client.guilds.get(tokens.guild);
 
   if (msg.guild === null) {
+    if(client.blacklist.get(msg.author.id)) return msg.channel.send(`You are blacklisted from bloxway support!`)
     if (guild.channels.exists('name', `t-${msg.author.id}`)) {
       let c = guild.channels.find(channel => channel.name === `t-${msg.author.id}`);
       const reply1 = new Discord.RichEmbed()
@@ -36,6 +37,7 @@ module.exports = async (client, msg) => {
     .setFooter(`Bloxway Support System | Made by opxrator#0001`)
       c.send(eembed) 
     } else {
+      if(client.blacklist.get(msg.author.id)) return msg.channel.send(`You are blacklisted from bloxway support!`)
       //this is when a new ticket is created
       //PROMPT TYPE HERE
       const embed = new Discord.RichEmbed()

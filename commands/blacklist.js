@@ -10,8 +10,8 @@ exports.run = async (client, message, args) => {
     var e5 = new Discord.RichEmbed()
     .setTitle(":grey_exclamation: Bot Developers Only")
     .setColor("PURPLE")
-    .setDescription("For security reasons only Bloxway bot developers can use that command.")
-    if(message.author.id != ('427591816314093568') && message.author.id != ('412093411794092042')) return message.channel.send(e5)
+    .setDescription("For security reasons only Bloxway Support HRs can use that command.")
+    if(!message.member.roles.findAll('id', '786706380064948246')) return message.channel.send(e5)
 
     var userid90 = args[0];
     var reasons = args.splice(1).join(" ");
