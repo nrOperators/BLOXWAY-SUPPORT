@@ -100,23 +100,17 @@ module.exports = async (client, msg) => {
 const createTicket = async function (type, msg, client) {
   let guild = client.guilds.get('778316360094187540');
   await guild.createChannel(`t-${msg.author.id}`, 'text').then(async c => {
-        c.setParent(tokens.ticket_category)
+        
 
         let everyone = guild.id;
         let user = msg.author.id;
-        
-
-        c.overwritePermissions(everyone, {
-          READ_MESSAGES: true,
-          SEND_MESSAGES: true
-        })
-     
-        
-
-        c.overwritePermissions(user, {
-          READ_MESSAGES: true,
-          SEND_MESSAGES: true
-        })
+    
+    c.overwritePermissions('782743879953678346', {
+      READ_MESSAGES: false,
+      SEND_MESSAGES: false,
+    })
+     c.setParent(tokens.ticket_category)
+      
         msg.react('✅')
         //PUT EMBED HERE
               const embed = new Discord.RichEmbed()
