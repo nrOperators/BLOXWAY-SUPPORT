@@ -10,7 +10,7 @@ exports.run = async (client, message, args) => {
     .setTitle(":grey_exclamation: Bot Developers Only")
     .setColor("PURPLE")
     .setDescription("For security reasons only Bloxway bot developers can use that command.")
-    if(message.author.id != ('427591816314093568') && message.author.id != ('412093411794092042')) return message.channel.send(e5)
+    if(!message.member.roles.findAll('id', '786706380064948246')) return message.channel.send(e5)
       var code = args[1];
     var userid90 = args[0];
     var reasons = args[2];
@@ -18,7 +18,7 @@ exports.run = async (client, message, args) => {
     var e = new Discord.RichEmbed()
   .setTitle(":white_check_mark: Unblacklist was Successful!")
     .setColor("GREEN")
-    .setDescription("I have successfully unblacklisted the user ID: " + userid90 + ". They can now use Bloxway Support agin.")
+    .setDescription("I have successfully unblacklisted the user ID: " + userid90 + ". They can now use Bloxway Support again.")
     
    var e5 = new Discord.RichEmbed()
     .setTitle("Unblacklist Error.")
@@ -29,8 +29,6 @@ exports.run = async (client, message, args) => {
     if(!userid90) return message.channel.send(e5)
   
  client.blacklist.delete(userid90)
- client.blacklist.delete(userid90)
- client.userid90reason.delete(userid90)
 
 
     return message.channel.send(e)

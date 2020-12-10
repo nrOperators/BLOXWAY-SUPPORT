@@ -30,6 +30,10 @@ exports.run = async (client, message, args) => {
     .setTitle("Blacklist Error.")
     .setColor("RED")
     .setDescription(":x: Please state the discord ID when you execute the command.")
+        var e6 = new Discord.RichEmbed()
+    .setTitle("Blacklist Error.")
+    .setColor("RED")
+    .setDescription(":x: Please state the reason for this blacklist.")
       
  //  if(client.cooldowntransfer.has(message.author.id)) {
   //      return message.channel.send(e3)
@@ -37,9 +41,10 @@ exports.run = async (client, message, args) => {
     if(!userid90) return message.channel.send(e5)
       if(userid90 == "427591816314093568") return message.channel.send(e4)
       if(userid90 == "427591816314093568") return message.channel.send(e4)
+  if(!reasons) return message.channel.send(e6)
 
   //  client.groupid2.set(`${code}`,  groupid2);
- client.blacklist.set(userid90, "Blacklisted by: " + message.author.username)
+ await client.blacklist.set(userid90, "Blacklisted by: " + message.author.username + " for a reason of: " + reasons)
 
 
     return message.channel.send(e)

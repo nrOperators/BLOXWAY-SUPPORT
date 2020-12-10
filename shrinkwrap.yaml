@@ -1,13 +1,24 @@
 dependencies:
+  '@josh-providers/sqlite': 1.0.16
   chalk: 2.4.2
   discord.js: 11.6.4
   enmap: 5.8.2
   enmap-level: 2.1.0
   got: 11.8.0
   hastebin-gen: 2.0.5
+  josh: 0.2.0
   moment: 2.29.1
   ms: 2.1.2
 packages:
+  /@josh-providers/sqlite/1.0.16:
+    dependencies:
+      better-sqlite3: 7.1.1
+      lodash: 4.17.20
+      on-change: 2.2.0
+      serialize-javascript: 5.0.1
+    dev: false
+    resolution:
+      integrity: sha512-T1BcFBN0iYEb2YqaS7ZWTIwPbhzWlXtz3efnLlIY5RhZJEenSEydWvsO26G5P6zYRwNgGANdmwMOyOqIaiXntg==
   /@sindresorhus/is/4.0.0:
     dev: false
     engines:
@@ -469,6 +480,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-u5NdSFgsuhaMBoNJV6VKPgcSTxE=
+  /josh/0.2.0:
+    dependencies:
+      lodash: 4.17.20
+    dev: false
+    resolution:
+      integrity: sha512-ja/z77B14j2ndjLlAfwcxT1reZ4Va581yQULxR8E/OQDG6ts6ZoqDPssQ+ArRu9ncQL5VFXBwQMcDU2TcFaQog==
   /json-buffer/3.0.1:
     dev: false
     resolution:
@@ -1047,11 +1064,13 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
+  '@josh-providers/sqlite': ^1.0.16
   chalk: ^2.3.2
   discord.js: ^11.5.0
   enmap: ^5.8.1
   enmap-level: ^2.1.0
   got: ^11.7.0
   hastebin-gen: ^2.0.5
+  josh: ^0.2.0
   moment: ^2.29.1
   ms: ^2.1.2

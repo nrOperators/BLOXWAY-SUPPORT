@@ -9,11 +9,15 @@ const got = require("got")
 setInterval(function() {
   got("https://bloxway-support.glitch.me");
 }, 230000);
+const Josh = require("josh");
+const provider = require("@josh-providers/sqlite");
 
-client.db1 = new Enmap({provider: new EnmapLevel({name: "blacklisted"})});
-client.blacklist = new Enmap({provider: new EnmapLevel({name: "blacklist"})});
-client.userid90 = new Enmap({provider: new EnmapLevel({name: "userid90"})});
-client.userid90reason = new Enmap({provider: new EnmapLevel({name: "userid90reason"})});
+const blacklist = new Josh({
+  name: 'blacklist',
+  provider,
+});
+
+client.blacklist = blacklist;
 
 
 client.tokens = tokens;

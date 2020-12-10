@@ -28,6 +28,8 @@
     "enmap": "^5.8.1",
     "enmap-level": "^2.1.0",
     "moment": "^2.29.1",
-    "hastebin-gen": "^2.0.5"
+    "hastebin-gen": "^2.0.5",
+    "josh": "^0.2.0",
+    "@josh-providers/sqlite": "^1.0.16"
   }
 }
